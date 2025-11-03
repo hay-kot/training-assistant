@@ -1,0 +1,6 @@
+[tasks.sync]
+description = "Sync strava.db from zues server"
+run = """
+mkdir -p .data
+scp zues:/home/hayden/docker/strava-stats/appdata/storage/database/strava.db ./.data/strava.db
+"""
