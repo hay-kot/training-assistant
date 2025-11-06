@@ -128,3 +128,14 @@ ChatMessage table stores conversation history for maintaining context across ses
 - All fitness data comes from Strava export/sync
 - Template-driven plan generation ensures consistency
 - Plans should reference specific data points from queries (e.g., "Based on your last 4 weeks averaging 15 miles...")
+
+## Gym Equipment
+
+- Adjustable Dumbells
+- Weight Bench
+- Cable Machine
+- Treadmill  (10% incline / 10mph)
+- Exercise Bike
+- Weight Vest
+- Calf Raise Block
+- Exercise Bands
