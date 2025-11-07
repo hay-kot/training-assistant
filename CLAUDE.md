@@ -106,6 +106,23 @@ GROUP BY week
 ORDER BY week DESC;
 ```
 
+### Pace Calculations
+
+**IMPORTANT:** When displaying running pace from database queries:
+- Database stores pace calculations as decimal minutes (e.g., 10.77 = 10 minutes 46 seconds)
+- Always convert to MM:SS format for display using this query pattern:
+
+```sql
+SELECT
+  CAST(movingTimeInSeconds/60.0/(distance/1609.34) AS INTEGER) || ':' ||
+  printf('%02d', CAST((movingTimeInSeconds/60.0/(distance/1609.34) - CAST(movingTimeInSeconds/60.0/(distance/1609.34) AS INTEGER)) * 60 AS INTEGER)) as pace
+FROM Activity
+WHERE sportType = 'Run';
+```
+
+- Never display pace as decimal (10.77) - always convert to MM:SS format (10:46)
+- To convert decimal to MM:SS: integer part is minutes, decimal × 60 is seconds
+
 ### Personal Records
 
 ```sql
